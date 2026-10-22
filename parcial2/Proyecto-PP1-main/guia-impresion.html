@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="author" content="Magali Badilla- Legajo XXXXX">
+<meta name="author" content="Victor Scabone - Legajo 36134583">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Impresión 3D - PrintForge 3D</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+
+    
+    <style>
+:root {
+    --primary-dark: #0f0f1a;
+    --secondary-dark: #1a1a2e;
+    --accent: #e94560;
+    --accent-glow: #ff6b81;
+    --gold: #f5c518;
+    --text-light: #e0e0e0;
+    --card-bg: #16213e;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark)) !important;
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 4px 30px rgba(233, 69, 96, 0.15);
+}
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.navbar-brand i {
+    -webkit-text-fill-color: var(--accent);
+}
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: var(--accent-glow) !important;
+}
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent), #c0392b);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(233, 69, 96, 0.45);
+    color: #fff;
+}
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Sección de formatos */
+.section-title {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+.divider-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    border-radius: 2px;
+    margin: 0 auto 1rem;
+}
+
+/* Tarjetas de contenido */
+.card {
+    background-color: var(--card-bg);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+.card-body h3, .card-body h5 {
+    color: var(--text-light);
+}
+.list-group-item {
+    background-color: var(--secondary-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+/* Acordeón */
+.accordion-item {
+    background-color: var(--card-bg);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.accordion-button {
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--accent);
+    color: #fff;
+}
+.accordion-body {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
+    border-top: 2px solid var(--accent);
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+.footer-title:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.footer-text {
+    color: #a0a0b8;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+.footer-copyright {
+    color: #666;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+    </style>
+</head>
+
+
+
+
+<body>
+
+     <!-- ===========BARRA DE NAVEGACION======== -->
+<!--=============Barra de navegacion=============-->
+
+
+     <!-- ===========BARRA DE NAVEGACION======== -->
+    <!--Contiene todo lo que sí se ve en la página: texto, imágenes, formula  -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <!-- Logo / Marca -->
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-box-seam"></i> 3D ForAll
+        </a>
+        
+        <!-- Botón hamburguesa (aparece en pantallas pequeñas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Enlaces que se colapsan en móvil -->
+        <div class="collapse navbar-collapse" id="navbarPrincipal">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categorias.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guia-impresion.html">Guía de impresión</a>
+                </li>
+            </ul>
+            <!-- Botón opcional para subir imágenes (solo en index.html) -->
+            <a href="index.html#subir" class="btn btn-accent btn-sm ms-lg-3">
+                <i class="bi bi-plus-lg me-1"></i> Subir Imágenes
+            </a>
+        </div>
+    </div>
+</nav>
+    
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">
+        Guía Básica de Impresión 3D
+    </h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h3>¿Qué es la impresión 3D?</h3>
+            <p>
+                La impresión 3D es un proceso de fabricación que permite crear objetos físicos a partir de modelos digitales.
+            </p>
+        </div>
+    </div>
+
+    <!-- Formatos Disponibles -->
+<div class="text-center mb-4 mt-5">
+    <div class="divider-line"></div>
+    <h2 class="section-title">Formatos Disponibles</h2>
+</div>
+<div class="row g-4 justify-content-center mb-5">
+    <div class="col-sm-6 col-lg-3">
+        <div class="text-center p-4" style="background: var(--card-bg); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);">
+            <i class="bi bi-file-earmark-arrow-down fs-1 text-danger mb-3 d-block"></i>
+            <h5 class="fw-bold">STL</h5>
+            <p class="text-muted small">Formato estándar para impresión 3D. Compatible con todas las impresoras FDM y SLA.</p>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="text-center p-4" style="background: var(--card-bg); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);">
+            <i class="bi bi-file-earmark-arrow-down fs-1 text-info mb-3 d-block"></i>
+            <h5 class="fw-bold">OBJ</h5>
+            <p class="text-muted small">Formato con texturas. Ideal para renderizado y modelado adicional en Blender.</p>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="text-center p-4" style="background: var(--card-bg); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);">
+            <i class="bi bi-file-earmark-arrow-down fs-1 text-success mb-3 d-block"></i>
+            <h5 class="fw-bold">3MF</h5>
+            <p class="text-muted small">Formato moderno con color y textura integrado. Soporte multi-material.</p>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="text-center p-4" style="background: var(--card-bg); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);">
+            <i class="bi bi-file-earmark-arrow-down fs-1 text-warning mb-3 d-block"></i>
+            <h5 class="fw-bold">STEP</h5>
+            <p class="text-muted small">Formato CAD paramétrico. Perfecto para ingeniería y modificaciones técnicas.</p>
+        </div>
+    </div>
+</div>
+
+ <div class="card mb-4">
+    <div class="card-body">
+        <h3>Materiales recomendados para impresión 3D</h3>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>PLA</h5>
+                        <p>Fácil de imprimir, económico y recomendado para principiantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>ABS</h5>
+                        <p>Mayor resistencia mecánica y térmica para piezas más exigentes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>PETG</h5>
+                        <p>Excelente equilibrio entre resistencia, flexibilidad y facilidad de impresión.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-body">
+        <h3>Pasos para imprimir un modelo descargado</h3>
+
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">
+                Descargar el modelo desde PrintForge 3D.
+            </li>
+
+            <li class="list-group-item">
+                Abrir el archivo en un programa de laminado (Cura, PrusaSlicer o similar).
+            </li>
+
+            <li class="list-group-item">
+                Configurar material, calidad y soportes de impresión.
+            </li>
+
+            <li class="list-group-item">
+                Generar el archivo G-Code para la impresora.
+            </li>
+
+            <li class="list-group-item">
+                Iniciar la impresión y supervisar las primeras capas.
+            </li>
+
+            <li class="list-group-item">
+                Retirar la pieza terminada y realizar el postprocesado si es necesario.
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-body">
+        <h3>Problemas frecuentes y soluciones</h3>
+
+        <div class="accordion" id="problemasFrecuentes">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#problema1">
+                        La pieza se despega de la cama
+                    </button>
+                </h2>
+
+                <div id="problema1" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Verificar la nivelación de la cama y aumentar ligeramente la temperatura de la base.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#problema2">
+                        La impresión sale deformada
+                    </button>
+                </h2>
+
+                <div id="problema2" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Reducir la velocidad de impresión y comprobar la ventilación del equipo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#problema3">
+                        Aparecen hilos entre las piezas
+                    </button>
+                </h2>
+
+                <div id="problema3" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Ajustar la retracción del filamento en el software de laminado.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>     
+</div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+       <!--PieDePag-->
+           <footer>
+           <div class="footer-content">
+        <a class="footer-title" href="#">
+            <i class="bi bi-box-seam me-2"></i>3D ForAll
+        </a>
+        <p class="footer-text">Plataforma de modelos 3D para impresión</p>
+        <div class="footer-copyright">
+            <i class="bi bi-c-circle"></i> 2025 3D ForAll. Todos los derechos reservados.
+        </div>
+    </div>
+    </footer>
+
+</body>
+</html>

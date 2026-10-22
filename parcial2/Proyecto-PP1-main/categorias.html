@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="author" content="Magali Badilla - Legajo XXXXX">
+<meta name="author" content="Victor Scabone - Legajo 36134583">
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - PrintForge 3D</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <style>
+:root {
+    --primary-dark: #0f0f1a;
+    --secondary-dark: #1a1a2e;
+    --accent: #e94560;
+    --accent-glow: #ff6b81;
+    --gold: #f5c518;
+    --text-light: #e0e0e0;
+    --card-bg: #16213e;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark)) !important;
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 4px 30px rgba(233, 69, 96, 0.15);
+}
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.navbar-brand i {
+    -webkit-text-fill-color: var(--accent);
+}
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: var(--accent-glow) !important;
+}
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent), #c0392b);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(233, 69, 96, 0.45);
+    color: #fff;
+}
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Category Cards */
+.category-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-light);
+    display: block;
+}
+.category-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    color: var(--text-light);
+}
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+.category-card h5 {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.category-card small {
+    color: #888;
+}
+
+/* Section titles */
+.section-title {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+.section-subtitle {
+    color: #888;
+    margin-bottom: 3rem;
+}
+.divider-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    border-radius: 2px;
+    margin: 0 auto 1rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
+    border-top: 2px solid var(--accent);
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+.footer-title:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.footer-text {
+    color: #a0a0b8;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+.footer-copyright {
+    color: #666;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+    </style>
+</head>
+
+<body>
+     <!-- ===========BARRA DE NAVEGACION======== -->
+    <!--Contiene todo lo que sí se ve en la página: texto, imágenes, formula  -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <!-- Logo / Marca -->
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-box-seam"></i> 3D ForAll
+        </a>
+        
+        <!-- Botón hamburguesa (aparece en pantallas pequeñas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Enlaces que se colapsan en móvil -->
+        <div class="collapse navbar-collapse" id="navbarPrincipal">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categorias.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guia-impresion.html">Guía de impresión</a>
+                </li>
+            </ul>
+            <!-- Botón opcional para subir imágenes (solo en index.html) -->
+            <a href="index.html#subir" class="btn btn-accent btn-sm ms-lg-3">
+                <i class="bi bi-plus-lg me-1"></i> Subir Imágenes
+            </a>
+        </div>
+    </div>
+</nav>
+
+     <!-- *********Categorias********* -->
+   <section id="categorias" class="py-5">
+    <div class="container">
+        <div class="text-center">
+            <div class="divider-line"></div>
+            <h2 class="section-title">Explora nuestra amplia categoría</h2>
+            <p class="section-subtitle">Más de 9 categorías para elegir</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🐉</span>
+                    <h5>Dragones</h5>
+                    <small>156 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">⚔️</span>
+                    <h5>Caballeros</h5>
+                    <small>765 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🎌</span>
+                    <h5>Anime</h5>
+                    <small>876 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🦖</span>
+                    <h5>Dinosaurios</h5>
+                    <small>254 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🤖</span>
+                    <h5>Robots</h5>
+                    <small>2054 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🧙</span>
+                    <h5>Magos</h5>
+                    <small>566 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🚀</span>
+                    <h5>Vehículos</h5>
+                    <small>123 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🏛️</span>
+                    <h5>Arquitecturas</h5>
+                    <small>2245 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="category-card">
+                    <span class="category-icon">🎭</span>
+                    <h5>Máscaras</h5>
+                    <small>4200 Modelos</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                    <span class="category-icon">🦁</span>
+                    <h5>Animales</h5>
+                    <small>200 Modelos</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--=====Pie de pagina====-->
+    <footer>
+           <div class="footer-content">
+        <a class="footer-title" href="#">
+            <i class="bi bi-box-seam me-2"></i>3D ForAll
+        </a>
+        <p class="footer-text">Plataforma de modelos 3D para impresión</p>
+        <div class="footer-copyright">
+            <i class="bi bi-c-circle"></i> 2025 3D ForAll. Todos los derechos reservados.
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
