@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <!--   Contiene información no visible para el usuario, pero importante para el navegador. 
+    Aquí van metadatos, título, enlaces a CSS, etc.-->
+    <!--- UTF8 PERMITE USAR TILDESM Ñ Y EMOJIS SIN PROBLEMAS-->
+    <meta charset="UTF-8"> 
+<meta name="author" content="Magali Badilla- Legajo XXXXX">
+<meta name="author" content="Victor Scabone - Legajo 36134583">
+
+
+
+
+    <!-- sirve para que se adapte a dispositivos móviles-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrintFigure3DforAll- Modelos para imprimir</title>   
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+<style>
+
+/* Estilos para  barra de navegación  */
+
+
+        :root {
+            --primary-dark: #0f0f1a;
+            --secondary-dark: #1a1a2e;
+            --accent: #e94560;
+            --accent-glow: #ff6b81;
+            --gold: #f5c518;
+            --text-light: #e0e0e0;
+            --card-bg: #16213e;
+        }
+
+        body {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ── Navbar ── */
+        .navbar {
+            background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark)) !important;
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 4px 30px rgba(233, 69, 96, 0.15);
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .navbar-brand i {
+            -webkit-text-fill-color: var(--accent);
+        }
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--accent-glow) !important;
+        }
+
+        /* ── Hero ── */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.12), rgba(245, 197, 24, 0.08));
+            border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+            padding: 5rem 0 4rem;
+        }
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.15;
+        }
+        .hero-title .highlight {
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #a0a0b8;
+            max-width: 600px;
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), #c0392b);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.45);
+            color: #fff;
+        }
+        .btn-outline-gold {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        /* ── Stats ── */
+        .stat-card {
+            background: var(--secondary-dark);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+/* Hacer que el texto dentro de las tarjetas de estadísticas sea más claro */
+.stat-card small {
+    color: #a0a0b8 !important;  /* Mismo color que hero-subtitle */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── Categories ── */
+        .category-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-light);
+            display: block;
+        }
+        .category-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            color: var(--text-light);
+        }
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .category-card h5 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .category-card small {
+            color: #888;
+        }
+
+        /* ── Model Cards ── */
+        .model-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .model-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.15);
+        }
+        .model-img-wrapper {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .model-img-wrapper .placeholder-icon {
+            font-size: 5rem;
+            opacity: 0.3;
+        }
+        .badge-category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+        }
+        .badge-free {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--gold);
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 50px;
+        }
+        .model-card .card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+        .model-card .card-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+        .model-card .card-text {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .model-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .model-meta span {
+            font-size: 0.8rem;
+            color: #999;
+        }
+        .model-meta i {
+            margin-right: 4px;
+        }
+        .btn-download {
+            background: linear-gradient(135deg, var(--accent), #c0392b);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.45rem 1.2rem;
+            border-radius: 50px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .btn-download:hover {
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* ── Upload Section ── */
+        .upload-section {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.08), rgba(245, 197, 24, 0.05));
+            border: 1px solid rgba(233, 69, 96, 0.15);
+            border-radius: 24px;
+            padding: 3rem;
+        }
+        .upload-zone {
+            border: 2px dashed rgba(233, 69, 96, 0.4);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(233, 69, 96, 0.04);
+            transition: border-color 0.3s;
+        }
+        .upload-zone:hover {
+            border-color: var(--accent);
+        }
+        .upload-zone i {
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        .view-label {
+            font-weight: 600;
+            color: var(--accent-glow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .form-control, .form-select {
+            background-color: var(--secondary-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 12px;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.2rem rgba(233, 69, 96, 0.25);
+            color: var(--text-light);
+        }
+        .form-control::placeholder {
+            color: #555;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        /* ── How it works ── */
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        /* ── Footer ── */
+        footer a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: var(--accent-glow);
+        }
+
+        /* ── Misc ── */
+        .section-title {
+            font-weight: 800;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            color: #888;
+            margin-bottom: 3rem;
+        }
+        .divider-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            border-radius: 2px;
+            margin: 0 auto 1rem;
+        }
+        /* Texto claro personalizado (para que se vea en fondo oscuro) */
+
+.text-step-description {
+    color: #b0b0c8;  /* Un poco más claro que el anterior */
+    line-height: 1.5;
+}
+.step-card {
+    background: rgba(37, 37, 64, 0.5);  /* Fondo semi-transparente más claro */
+    border-radius: 20px;
+    transition: transform 0.3s, background 0.3s;
+}
+.step-card:hover {
+    background: rgba(37, 37, 64, 0.8);
+    transform: translateY(-5px);
+}
+.step-title {
+    color: var(--text-light);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+/* Footer personalizado */
+footer {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
+    border-top: 2px solid var(--accent);
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+.footer-title:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.footer-text {
+    color: #a0a0b8;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+.footer-copyright {
+    color: #666;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}  
+      
+    </style>    
+</head>
+
+<body>
+     <!-- ===========BARRA DE NAVEGACION======== -->
+    <!--Contiene todo lo que sí se ve en la página: texto, imágenes, formula  -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <!-- Logo / Marca -->
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-box-seam"></i> 3D ForAll
+        </a>
+        
+        <!-- Botón hamburguesa (aparece en pantallas pequeñas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Enlaces que se colapsan en móvil -->
+        <div class="collapse navbar-collapse" id="navbarPrincipal">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categorias.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guia-impresion.html">Guía de impresión</a>
+                </li>
+            </ul>
+            <!-- Botón opcional para subir imágenes (solo en index.html) -->
+            <a href="index.html#subir" class="btn btn-accent btn-sm ms-lg-3">
+                <i class="bi bi-plus-lg me-1"></i> Subir Imágenes
+            </a>
+        </div>
+    </div>
+</nav>
+    <!--Descarga e imprime tu modelo + ir a secciones categorias y creacion-->
+    <section class="hero-section text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <span class="badge bg-danger bg-opacity-25 text-danger mb-3 px-3 py-2 fs-6">
+                    <i class="bi bi-lightning-charge-fill me-1"></i> ¡Totalmente gratis!
+                </span>
+                <h1 class="hero-title mb-4">
+                    Descarga e imprime <br><span class="highlight">las figuras 3D que desees</span>
+                </h1>
+                <p class="hero-subtitle mx-auto mb-4">
+                    Decenas de modelos listos para imprimir: Dragones, caballeros, espadas...<br>
+                    ¿No encuentras lo que buscas? Sube tu imagen y nosotros lo modelamos en 3D.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#subir" class="btn btn-accent">
+                        <i class="bi bi-camera me-2"></i>Crear mi Modelo
+                    </a>
+                    <a href="categorias.html" class="btn btn-outline-gold">
+                        <i class="bi bi-grid-3x3-gap me-2"></i>Ver Categorías
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+
+            <!-- *********Numeros de nuestra pagina********* -->
+        <!--Indicamos un numero ficticio de la cantidad de modelos que tenemos, con div separamos
+        las distintas categorias-->
+      <div class="container mt-5">
+         <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="stat-number">400+</div>
+                <small class="text-muted">Modelos 3D</small>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <small class="text-muted">Categorías</small>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="stat-number">1246+</div>
+                <small class="text-muted">Descargas totales</small>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <small class="text-muted">Gratis</small>
+            </div>
+        </div>
+        </div>                
+       </div>
+
+
+        <!-- ACA ME GSUTARIA PONER UNA IMAGEN DE MEME QUE DIGA QUE ES TODO GRATIS-->
+         <!-- *********Como funciona********* -->
+  <section id="como-funciona" class="py-5">
+    <div class="container">
+        <div class="text-center">
+            <div class="divider-line"></div>
+            <h2 class="section-title">¿Cómo hago mi diseño?</h2>
+            <p class="section-subtitle">En 3 simples pasos</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="step-card text-center p-4">
+                    <div class="step-number">1</div>
+                    <h5 class="step-title">📸 Sube tus fotos</h5>
+                    <p class="text-step-description">Toma fotos desde frente, atrás, arriba y abajo de tu figura o personaje deseado.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card text-center p-4">
+                    <div class="step-number">2</div>
+                    <h5 class="step-title">🤖 Procesamos tu modelo</h5>
+                    <p class="text-step-description">Nuestro sistema genera automáticamente un modelo 3D a partir de tus imágenes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card text-center p-4">
+                    <div class="step-number">3</div>
+                    <h5 class="step-title">🖨️ Descarga e imprime</h5>
+                    <p class="text-step-description">Recibe el archivo STL listo para enviar a tu impresora 3D y disfrutar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>       
+        <!-- ********* Subida de archivo ********* -->
+       <section id="subir" class="py-5">
+    <div class="container">
+        <div class="upload-section">
+            <div class="text-center mb-4">
+                <div class="divider-line"></div>
+                <h2 class="section-title">Crea tu Modelo 3D</h2>
+                <p class="section-subtitle mb-0">
+                    ¿No encuentras lo que buscas? Sube tus fotos y te lo modelamos.
+                </p>
+            </div>
+
+            <form id="formularioModelo"
+  action="/subir-modelo"
+  method="POST"
+  enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="nombreModelo" class="form-label">Nombre del modelo</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="nombreModelo"
+                            name="nombreModelo"
+                            placeholder="Ej: Mi dragón personalizado"
+                            required
+                        >
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="categoriaModelo" class="form-label">Categoría</label>
+                        <select
+                            class="form-select"
+                            id="categoriaModelo"
+                            name="categoriaModelo"
+                            required
+                        >
+                            <option value="" selected disabled>Selecciona una categoría</option>
+                            <option value="Dragones">Dragones</option>
+                            <option value="Caballeros">Caballeros</option>
+                            <option value="Anime">Anime</option>
+                            <option value="Dinosaurios">Dinosaurios</option>
+                            <option value="Robots">Robots</option>
+                            <option value="Magos">Magos</option>
+                            <option value="Vehículos">Vehículos</option>
+                            <option value="Arquitecturas">Arquitecturas</option>
+                            <option value="Máscaras">Máscaras</option>
+                            <option value="Animales">Animales</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="descripcionModelo" class="form-label">Descripción / Detalles</label>
+                    <textarea
+                        class="form-control"
+                        id="descripcionModelo"
+                        name="descripcionModelo"
+                        rows="3"
+                        placeholder="Describe los detalles que quieres que se capturen en el modelo 3D..."
+                        required
+                    ></textarea>
+                </div>
+
+                <h6 class="fw-bold mb-3 text-uppercase" style="letter-spacing: 2px; color: var(--accent-glow);">
+                    <i class="bi bi-images me-2"></i>Sube las 4 vistas obligatorias
+                </h6>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="upload-zone">
+                            <i class="bi bi-person mb-2 d-block"></i>
+                            <label for="vistaFrontal" class="view-label">Vista Frontal</label>
+                            <input
+                                type="file"
+                                class="form-control form-control-sm"
+                                id="vistaFrontal"
+                                name="vistaFrontal"
+                                accept="image/jpeg,image/png"
+                                required
+                            >
+                            <small class="text-muted d-block mt-2">JPG o PNG — Máx. 10 MB</small>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="upload-zone">
+                            <i class="bi bi-person-arms-up mb-2 d-block"></i>
+                            <label for="vistaTrasera" class="view-label">Vista Trasera</label>
+                            <input
+                                type="file"
+                                class="form-control form-control-sm"
+                                id="vistaTrasera"
+                                name="vistaTrasera"
+                                accept="image/jpeg,image/png"
+                                required
+                            >
+                            <small class="text-muted d-block mt-2">JPG o PNG — Máx. 10 MB</small>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="upload-zone">
+                            <i class="bi bi-arrows-expand mb-2 d-block"></i>
+                            <label for="vistaSuperior" class="view-label">Vista Superior</label>
+                            <input
+                                type="file"
+                                class="form-control form-control-sm"
+                                id="vistaSuperior"
+                                name="vistaSuperior"
+                                accept="image/jpeg,image/png"
+                                required
+                            >
+                            <small class="text-muted d-block mt-2">JPG o PNG — Máx. 10 MB</small>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="upload-zone">
+                            <i class="bi bi-arrows-expand mb-2 d-block"></i>
+                            <label for="vistaInferior" class="view-label">Vista Inferior</label>
+                            <input
+                                type="file"
+                                class="form-control form-control-sm"
+                                id="vistaInferior"
+                                name="vistaInferior"
+                                accept="image/jpeg,image/png"
+                                required
+                            >
+                            <small class="text-muted d-block mt-2">JPG o PNG — Máx. 10 MB</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mensajeFormulario" class="alert d-none" role="alert" aria-live="polite"></div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-accent btn-lg px-5">
+                        <i class="bi bi-magic me-2"></i>Generar mi Modelo 3D
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+       <!--PieDePag-->
+<footer>
+    <div class="footer-content">
+        <a class="footer-title" href="#">
+            <i class="bi bi-box-seam me-2"></i>3D ForAll
+        </a>
+        <p class="footer-text">Plataforma de modelos 3D para impresión</p>
+        <div class="footer-copyright">
+            <i class="bi bi-c-circle"></i> 2025 3D ForAll. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
